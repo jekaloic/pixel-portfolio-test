@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<head>
+    <title>assignm portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Pixelify Sans', monospace;
+            color: #fff;
+        }
+        img {
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+        .parallax-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 300vh;
+            z-index: -1;
+            pointer-events: none;
+            background-size: cover;
+            background-position: top center;
+        }
+        #parallax-layer-1 {
+            background-image: url("images/grass.png");
+            z-index: -1;
+        }
+        #parallax-layer-2 {
+            background-image: url("images/cloud2.png");
+            z-index: -2;
+        }
+        #parallax-layer-3 {
+            background-image: url("images/cloud.png");
+            z-index: -3;
+                    }
+        #parallax-layer-4 {
+            background-image: url("images/sky.png");
+            z-index: -4;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+          background: linear-gradient(to bottom,
+        rgba(26, 32, 44, 0.9) 0%,    
+        rgba(26, 32, 44, 0.9) 50%,  
+        rgba(26, 32, 44, 0.5) 100%  
+            );
+            padding: 10px;
+            z-index: 100;
+            border-bottom: 4px solid #ffffff;
+            box-shadow: 0 4px 0 #1d2a3f73;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: #a0aec0;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 16px;
+            border: 2px solid transparent;
+            transition: all 0.1s;
+        }
+        nav a:hover {
+            color: #fff;
+            border: 2px solid #4299e1;
+            background: rgba(0, 2, 3, 0.1);
+        }
+        section {
+            padding: 80px 20px 60px;
+            position: relative;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 80px;
+            letter-spacing: 8px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 5px 5px 0 #000c2281;
+            font-size: 45px;
+            letter-spacing: 8px;
+        }
+#hero h1 {
+    background-image: linear-gradient( 
+       -45deg, 
+        #40E0D0,
+        #4169E1,
+        #8A2BE2,
+        #40E0D0 
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: infinite-scroll 10s linear infinite;
+-webkit-text-stroke-width: 3px;
+-webkit-text-stroke-color: #1f235c;
+ filter: drop-shadow(5px 5px 0 #00379665);
+    }
+@keyframes infinite-scroll {
+    from {
+        background-position: 0% 50%;
+    }
+    to {
+        background-position: 200% 50%;
+    }
+}    
+        h2.has-divider::before {
+    content: ''; 
+    display: inline-block; 
+    width: 34px; 
+    height: 34px;
+    margin-right: 15px; 
+    margin-bottom: -5px; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(5px 5px 0 #0c112569);
+}
+        .hero-divider {
+    color: #ffffff;
+    font-size: 45px;
+    letter-spacing: 4px;
+    text-shadow: 4px 4px 0 #101f3a70;
+    margin: 20px 0;
+}
+.has-divider::after {
+    content: '';
+    display: block; 
+    width: 60%;
+    max-width: 800px;
+    height: 4px;
+    margin: 40px auto;
+    background: #ffffff;
+    box-shadow: 4px 4px 0 #000d2387;
+}
+        #hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+        .hero-logo {
+            margin: 40px 0;
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+        }
+        #about h2.has-divider::before {
+    background-image: url("images/about.png");
+}
+#gallery h2.has-divider::before {
+    background-image: url("images/gallery.png");
+}
+#contact h2.has-divider::before {
+    background-image: url("images/contact.png");
+}
+nav a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+nav a::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(2px 2px 0 #12367471);
+}
+#nav-home::before {
+    background-image: url("images/home.png");
+}
+#nav-about::before {
+    background-image: url("images/about.png");
+}
+#nav-gallery::before {
+    background-image: url("images/gallery.png");
+}
+#nav-contact::before {
+    background-image: url("images/contact.png");
+}
+        #about {
+             background: linear-gradient(to bottom,
+        rgba(26, 32, 44, 0) 0%,    
+        rgba(26, 32, 44, 0.85) 40%,  
+        rgba(26, 32, 44, 0.95) 100%  
+            );
+        }
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        .about-avatar {
+            border: 4px solid #4a5568;
+            box-shadow: 8px 8px 0 #001f535d;
+            width: 200px;
+            height: 200px;
+        }
+        #gallery {
+            background:  rgba(26, 32, 44, 0.95);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            align-items: start;
+        }
+        .gallery-item {
+            border: 4px solid #4a5568;
+            box-shadow: 12px 12px 0 #1d173842;
+            transition: transform 0.1s;
+            background: #1a202c;
+            padding: 10px;
+        }
+        .gallery-item:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0 #2d3748;
+            border: 4px solid #ffffff;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .gallery-title {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #a0aec0;
+            text-align: center;
+        }
+    .gallery-grid img {
+    cursor: zoom-in;
+    transition: transform 0.2s ease-in-out;
+}
+    .gallery-grid img:hover {
+    transform: scale(1.035);
+}
+    .lightbox {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 14, 39, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+}
+.lightbox.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+.lightbox-content {
+    max-width: 80vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    border: 4px solid #1c1a6571;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+.lightbox-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 69px;
+    color: #a0aec0;
+    padding: 10px 20px;
+    user-select: none; 
+    transition: background-color 0.2s linear;
+}
+.lightbox-arrow:hover {
+    background-color: rgba(66, 153, 225, 0.2);
+    color: #ffffff;
+}
+#prev-arrow {
+    left: 30px;
+}
+#next-arrow {
+    right: 30px;
+}
+        #contact {
+            background:  rgba(26, 32, 44, 0.99);
+        }
+        .contact-content {
+            text-align: center;
+            font-size: 20px;
+            line-height: 2;
+        }
+        .contact-content a {
+            color: #4299e1;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s;
+        }
+        .contact-content a:hover {
+            border-bottom-color: #ffffff;
+        }
+        footer {
+            background: #0a0e27;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 4px solid #4a5568;
+        }
+.mini-gallery {
+    flex-basis: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mini-gallery h3 {
+    text-align: center;
+    color: #a0aec0; 
+    margin-bottom: 20px;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+.mini-gallery-images {
+    display: flex; 
+    justify-content: center; 
+    gap: 20px;
+    flex-wrap: wrap; 
+}
+.mini-gallery-images img {
+    height: 120px;
+    width: auto;
+    border: 3px solid #4a5568;
+    box-shadow: 4px 4px 0 #2d3748;
+    transition: height 0.3s ease-in-out;
+}
+.mini-gallery-images img:hover {
+    height: 150px;
+    border: 3px solid #ffffff;
+}
+.about-text a,
+.contact-content a {
+    color: #4299e1;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+.about-text a:hover,
+.contact-content a:hover {
+    color: #fff;
+    border-bottom-color: #ffffff;
+}
+@keyframes drift-across {
+    from {
+        transform: translateX(-250vw);
+    }
+    to {
+        transform: translateX(250vw);
+    }
+}
+.cloud-scape {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -3;
+}
+.cloud {
+    position: absolute;
+    left: 0;
+    opacity: 0.6;
+    animation: drift-across linear infinite;
+}
+.cloud:nth-child(1) {
+    top: 10%;
+    transform: scale(0.8);
+    animation-duration: 60s;
+    animation-delay: -20s;
+}
+.cloud:nth-child(2) {
+    top: 25%;
+    transform: scale(1.1);
+    animation-duration: 40s;
+    animation-delay: -5s;
+}
+.cloud:nth-child(3) {
+    top: 20%;
+    transform: scale(0.9);
+    animation-duration: 70s;
+    animation-delay: -45s;
+}
+.cloud:nth-child(4) {
+    top: 35%;
+    transform: scale(1.2);
+    animation-duration: 35s;
+    animation-delay: -30s;
+}
+.cloud:nth-child(5) {
+    top: 45%;
+    transform: scale(0.7);
+    animation-duration: 80s;
+    animation-delay: -55s;
+}
+    </style>
+</head>
+<body>
+    <div class="cloud-scape">
+    <img src="images/1cloud.png" class="cloud" style="--i:1;" alt="">
+    <img src="images/2cloud.png" class="cloud" style="--i:2;" alt="">
+    <img src="images/3cloud.png" class="cloud" style="--i:3;" alt="">
+    <img src="images/2cloud.png" class="cloud" style="--i:4;" alt="">
+    <img src="images/1cloud.png" class="cloud" style="--i:5;" alt="">
+</div>
+    <div id="parallax-layer-1" class="parallax-layer"></div>
+    <div id="parallax-layer-1" class="parallax-layer"></div>
+    <div id="parallax-layer-2" class="parallax-layer"></div>
+    <div id="parallax-layer-3" class="parallax-layer"></div>
+    <div id="parallax-layer-4" class="parallax-layer"></div>
+<nav>
+    <ul>
+        <li><a href="#hero" id="nav-home">Home</a></li>
+        <li><a href="#about" id="nav-about">About</a></li>
+        <li><a href="#gallery" id="nav-gallery">Gallery</a></li>
+        <li><a href="#contact" id="nav-contact">Contact</a></li>
+    </ul>
+</nav>
+    <section id="hero">
+        <div class="container">
+            <h1 class="has-divider">Loïc Mounien</h1>
+            <img src="images/portfo.png" alt="Logo" class="hero-logo">
+            <p class="hero-divider">- Pixel Artist -</p>
+        </div>
+    </section>
+    <section id="about">
+        <div class="container">
+            <h2 class="has-divider">About Me</h2>
+            <div class="about-content">
+                <img src="images/pfp.png" alt="Avatar" class="about-avatar">
+                <div class="about-text">
+                    <p>■ Passionate pixel artist since my early days by retro classics on the NES such as Super Mario Bros, Contra and Castlevania</p>
+                    <br>
+                    <p>■ In 2017 I began as a hobby like making custom <a href="https://www.curseforge.com/minecraft/texture-packs/coquet" target="_blank">Minecraft textures</a> which quickly later grew into dedicated arts with original characters and environments</p>
+                    <br>
+                    <p>■ Today, I work as a pixel artist for a <a href="https://www.minecraft.net/en-us/marketplace/pdp/poggy/better-on-bedrock/6c3a6979-dc77-41c6-b19e-0071dabedf71" target="_blank">Minecraft Marketplace studio</a> and am currently available for freelance commissions</p>
+                </div>
+                <div class="mini-gallery">
+    <h3>- Early works from 2018 -</h3>
+    <div class="mini-gallery-images">
+        <img src="images/sunset.png">
+        <img src="images/afternoon.png">
+        <img src="images/beach.png">
+        <img src="images/street.png">
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
+    <section id="gallery">
+        <div class="container">
+            <h2 class="has-divider">Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/ceiros.png">
+                    <p class="gallery-title">Ceiros from Terraria: Starlight River</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/lup.png">
+                    <p class="gallery-title">Lupa From Wuthering Waves</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/pak.png">
+                    <p class="gallery-title">Minecraft Pack Icon</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/suprem.png">
+                    <p class="gallery-title">Supreme Calamitas from Terraria: Calamity</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/space.png">
+                    <p class="gallery-title">Space Madame</p>
+                </div>                
+                <div class="gallery-item">
+                    <img src="images/pokemon.png">
+                    <p class="gallery-title">Natioanl Park, Pokémon</p>
+                </div>
+            </div>
+    </section>
+    <section id="contact">
+        <div class="container">
+            <h2 class="has-divider">Contact</h2>
+            <div class="contact-content">
+                <p>Email: <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">> loicmounien04@fakemail.com <</a></p>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const layer1 = document.getElementById('parallax-layer-1');
+            layer1.style.transform = `translateY(${scrolled * -0.69}px)`;
+            const layer2 = document.getElementById('parallax-layer-2');
+            layer2.style.transform = `translateY(${scrolled * -0.75}px)`;
+            const layer3 = document.getElementById('parallax-layer-3');
+            layer3.style.transform = `translateY(${scrolled * -0.99}px)`;
+            const layer4 = document.getElementById('parallax-layer-4');
+            layer4.style.transform = `translateY(${scrolled * -0.15}px)`;
+        });
+    </script>
+<div class="lightbox" id="lightbox">
+    <span class="lightbox-arrow" id="prev-arrow">&lsaquo;</span>
+    <img class="lightbox-content" src="">
+    <span class="lightbox-arrow" id="next-arrow">&rsaquo;</span>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const galleryImages = document.querySelectorAll('.gallery-grid img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxContent = lightbox.querySelector('.lightbox-content');
+        const prevArrow = document.getElementById('prev-arrow');
+        const nextArrow = document.getElementById('next-arrow');
+        const imageUrls = Array.from(galleryImages).map(img => img.src);
+        let currentIndex = 0;
+        function showLightbox(index) {
+            currentIndex = index;
+            lightboxContent.src = imageUrls[currentIndex];
+            lightbox.classList.add('visible');
+        }
+        function hideLightbox() {
+            lightbox.classList.remove('visible');
+        }
+        function showNextImage(event) {
+            event.stopPropagation();
+            currentIndex = (currentIndex + 1) % imageUrls.length;
+            lightboxContent.src = imageUrls[currentIndex];
+        }
+        function showPrevImage(event) {
+            event.stopPropagation(); 
+            currentIndex = (currentIndex - 1 + imageUrls.length) % imageUrls.length;
+            lightboxContent.src = imageUrls[currentIndex];
+        }
+        galleryImages.forEach((image, index) => {
+            image.addEventListener('click', () => {
+                showLightbox(index);
+            });
+        });
+        prevArrow.addEventListener('click', showPrevImage);
+        nextArrow.addEventListener('click', showNextImage);
+        lightbox.addEventListener('click', hideLightbox);
+        window.addEventListener('keydown', (e) => {
+        });
+    });  
+ </script>
+ </body>
+</html>
